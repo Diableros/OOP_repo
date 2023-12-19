@@ -12,7 +12,8 @@ import {
   UsergroupAddOutlined,
   UserOutlined,
   VerticalAlignBottomOutlined,
-  HomeOutlined
+  HomeOutlined,
+  DingtalkOutlined
 } from '@ant-design/icons'
 import { MenuProps } from 'antd'
 
@@ -100,6 +101,11 @@ export const MENU_ITEMS: MenuItem[] = [
         key: Path.Facade,
         icon: <HomeOutlined />,
         label: 'Фасад'
+      },
+      {
+        key: Path.Flyweight,
+        icon: <DingtalkOutlined />,
+        label: 'Легковес'
       }
     ]
   }

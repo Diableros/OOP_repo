@@ -6,6 +6,7 @@ const Main = React.lazy(() => import('@/pages/Creational/FactoryMethod'))
 const AbstractFactory = React.lazy(
   () => import('@/pages/Creational/AbstractFactory')
 )
+
 const Prototype = React.lazy(
   () => import('@/pages/Creational/Prototype/Prototype')
 )
@@ -32,6 +33,7 @@ const CompositeClassic = React.lazy(
 )
 const Decorator = React.lazy(() => import('@/pages/Structure/Decorator'))
 const Facade = React.lazy(() => import('@/pages/Structure/Facade'))
+const Flyweight = React.lazy(() => import('@/pages/Structure/Flyweight'))
 
 export const routes = (): RouteObject[] => {
   return [
@@ -98,6 +100,10 @@ export const routes = (): RouteObject[] => {
         {
           element: <Facade />,
           path: Path.Facade
+        },
+        {
+          element: <Flyweight />,
+          path: Path.Flyweight
         }
       ]
     },

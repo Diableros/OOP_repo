@@ -15,5 +15,6 @@ export const enum Path {
   CompositeFC = 'structure/composite-fc',
   CompositeClassic = 'structure/composite-classic',
   Decorator = 'structure/decorator',
-  Facade = 'structure/facade'
+  Facade = 'structure/facade',
+  Flyweight = 'structure/flyweight'
 }
