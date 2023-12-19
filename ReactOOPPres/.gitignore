@@ -8,3 +8,4 @@ dist-ssr
 .eslintcache
 # Helm
 .helm/charts
+*.env

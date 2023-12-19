@@ -11,7 +11,8 @@ import {
   ToolOutlined,
   UsergroupAddOutlined,
   UserOutlined,
-  VerticalAlignBottomOutlined
+  VerticalAlignBottomOutlined,
+  HomeOutlined
 } from '@ant-design/icons'
 import { MenuProps } from 'antd'
 
@@ -94,6 +95,11 @@ export const MENU_ITEMS: MenuItem[] = [
         key: Path.Decorator,
         icon: <HeatMapOutlined />,
         label: 'Декоратор'
+      },
+      {
+        key: Path.Facade,
+        icon: <HomeOutlined />,
+        label: 'Фасад'
       }
     ]
   }

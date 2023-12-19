@@ -1,3 +1,3 @@
 import Builder from './Builder.tsx'
 
-export { Builder }
+export default Builder

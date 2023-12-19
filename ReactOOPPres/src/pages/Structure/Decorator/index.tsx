@@ -1,3 +1,3 @@
 import Decorator from './Decorator.tsx'
 
-export { Decorator }
+export default Decorator

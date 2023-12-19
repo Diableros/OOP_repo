@@ -1,14 +1,38 @@
+import * as React from 'react'
 import { RouteObject } from 'react-router-dom'
-import Main from '@/pages/Creational/FactoryMethod'
 import { Path } from '@/enum/path'
-import AbstractFactory from '@/pages/Creational/AbstractFactory'
-import { Prototype, PrototypeRegistry } from '@/pages/Creational/Prototype'
-import { Singleton } from '@/pages/Creational/Singleton'
-import { Builder } from '@/pages/Creational/Builder'
-import { AdapterFC, AdapterClassic } from '@/pages/Structure/Adapter'
-import { BridgeClassic, BridgeFC } from '@/pages/Structure/Bridge'
-import { CompositeFC, CompositeClassic } from '@/pages/Structure/Composite'
-import { Decorator } from '@/pages/Structure/Decorator'
+
+const Main = React.lazy(() => import('@/pages/Creational/FactoryMethod'))
+const AbstractFactory = React.lazy(
+  () => import('@/pages/Creational/AbstractFactory')
+)
+const Prototype = React.lazy(
+  () => import('@/pages/Creational/Prototype/Prototype')
+)
+const PrototypeRegistry = React.lazy(
+  () => import('@/pages/Creational/Prototype/PrototypeRegistry')
+)
+const Singleton = React.lazy(() => import('@/pages/Creational/Singleton'))
+const Builder = React.lazy(() => import('@/pages/Creational/Builder'))
+const AdapterFC = React.lazy(
+  () => import('@/pages/Structure/Adapter/AdapterFC')
+)
+const AdapterClassic = React.lazy(
+  () => import('@/pages/Structure/Adapter/AdapterClassic')
+)
+const BridgeFC = React.lazy(() => import('@/pages/Structure/Bridge/BridgeFC'))
+const BridgeClassic = React.lazy(
+  () => import('@/pages/Structure/Bridge/BridgeClassic')
+)
+const CompositeFC = React.lazy(
+  () => import('@/pages/Structure/Composite/CompositeFC')
+)
+const CompositeClassic = React.lazy(
+  () => import('@/pages/Structure/Composite/CompositeClassic')
+)
+const Decorator = React.lazy(() => import('@/pages/Structure/Decorator'))
+const Facade = React.lazy(() => import('@/pages/Structure/Facade'))
+
 export const routes = (): RouteObject[] => {
   return [
     {
@@ -70,6 +94,10 @@ export const routes = (): RouteObject[] => {
         {
           element: <Decorator />,
           path: Path.Decorator
+        },
+        {
+          element: <Facade />,
+          path: Path.Facade
         }
       ]
     },

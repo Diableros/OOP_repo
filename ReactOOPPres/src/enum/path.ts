@@ -14,5 +14,6 @@ export const enum Path {
   BridgeClassic = 'structure/bridge-classic',
   CompositeFC = 'structure/composite-fc',
   CompositeClassic = 'structure/composite-classic',
-  Decorator = 'structure/decorator'
+  Decorator = 'structure/decorator',
+  Facade = 'structure/facade'
 }

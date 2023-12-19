@@ -53,18 +53,25 @@ class MacFactory implements GUIFactory {
   }
 }
 
+class GUIFacade {
+  createFactory(factory: 'Mac' | 'Win'): GUIFactory {
+    // Здесь может быть логика определения платформы или другие условия
+    if (factory === 'Win') {
+      return new WinFactory();
+    } else if (factory === 'Mac') {
+      return new MacFactory();
+    }
+
+    throw new Error('Invalid factory');
+  }
+}
+
 class Application {
   private factory: GUIFactory;
   private button: Button;
 
   constructor(factory: 'Mac' | 'Win') {
-    if (factory === 'Win') {
-      this.factory = new WinFactory();
-    } else if (factory === 'Mac') {
-      this.factory = new MacFactory();
-    } else {
-      throw new Error('Invalid factory');
-    }
+    this.factory = new GUIFacade().createFactory(factory);
     this.button = this.factory.createButton();
   }
 

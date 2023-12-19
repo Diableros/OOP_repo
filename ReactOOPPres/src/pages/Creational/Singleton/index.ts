@@ -1,3 +1,3 @@
 import Singleton from './Singleton.tsx'
 
-export { Singleton }
+export default Singleton
