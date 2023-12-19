@@ -11,5 +11,7 @@ export const enum Path {
   AdapterFC = 'structure/adapter-fc',
   AdapterClassic = 'structure/adapter-classic',
   BridgeFC = 'structure/bridge-fc',
-  BridgeClassic = 'structure/bridge-classic'
+  BridgeClassic = 'structure/bridge-classic',
+  CompositeFC = 'structure/composite-fc',
+  CompositeClassic = 'structure/composite-classic'
 }

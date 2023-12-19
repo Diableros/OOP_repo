@@ -1,5 +1,6 @@
 import { Path } from '@/enum/path.ts'
 import {
+  ApartmentOutlined,
   ApiOutlined,
   BankOutlined,
   BuildOutlined,
@@ -77,6 +78,16 @@ export const MENU_ITEMS: MenuItem[] = [
         key: Path.BridgeClassic,
         icon: <ColumnWidthOutlined />,
         label: 'Мост Classic'
+      },
+      {
+        key: Path.CompositeFC,
+        icon: <ApartmentOutlined />,
+        label: 'Компоновщик FC'
+      },
+      {
+        key: Path.CompositeClassic,
+        icon: <ApartmentOutlined />,
+        label: 'Компоновщик Classic'
       }
     ]
   }

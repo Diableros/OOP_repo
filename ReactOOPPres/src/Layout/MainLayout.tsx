@@ -1,17 +1,14 @@
 import React, { useState } from 'react'
-import {
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
-} from '@ant-design/icons'
+import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons'
 import { Layout, Button, theme } from 'antd'
-import Menu from "@/Layout/components/Menu";
+import Menu from '@/Layout/components/Menu'
 
 const { Header, Sider, Content } = Layout
 
 type PropsType = {
-    children: React.ReactNode
+  children: React.ReactNode
 }
-const MainLayout = ({children}: PropsType) => {
+const MainLayout = ({ children }: PropsType) => {
   const [collapsed, setCollapsed] = useState(false)
   const {
     token: { colorBgContainer }
@@ -19,9 +16,9 @@ const MainLayout = ({children}: PropsType) => {
 
   return (
     <Layout>
-      <Sider trigger={null} collapsible collapsed={collapsed}>
+      <Sider width={250} trigger={null} collapsible collapsed={collapsed}>
         <div className='demo-logo-vertical' />
-          <Menu/>
+        <Menu />
       </Sider>
       <Layout>
         <Header style={{ padding: 0, background: colorBgContainer }}>
@@ -44,7 +41,7 @@ const MainLayout = ({children}: PropsType) => {
             background: colorBgContainer
           }}
         >
-            {children}
+          {children}
         </Content>
       </Layout>
     </Layout>
