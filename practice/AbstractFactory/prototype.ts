@@ -6,23 +6,39 @@ interface Checkbox {
     render: () => void;
 }
 
-class WinButton implements Button {
+interface Prototype {
+    clone(): Prototype;
+}
+
+class WinButton implements Button, Prototype {
+    clone() {
+        return new WinButton();
+    }
     render() {
         console.log('win button is rendered');
     }
 }
-class MacButton implements Button {
+class MacButton implements Button, Prototype {
+    clone() {
+        return new MacButton();
+    }
     render() {
         console.log('mac button is rendered');
     }
 }
 
-class WinCheckbox implements Checkbox {
+class WinCheckbox implements Checkbox, Prototype {
+    clone() {
+        return new WinCheckbox();
+    }
     render() {
         console.log('win checkbox is rendered');
     }
 }
-class MacCheckbox implements Checkbox {
+class MacCheckbox implements Checkbox, Prototype {
+    clone() {
+        return new MacCheckbox();
+    }
     render() {
         console.log('mac checkbox is rendered');
     }
@@ -34,16 +50,21 @@ interface GUIFactory {
 }
 
 class WinFactory implements GUIFactory {
+    button = new WinButton();
+    checkbox = new WinCheckbox();
     createButton() {
-        return new WinButton();
+        return this.button.clone();
     }
 
     createCheckbox() {
-        return new WinCheckbox();
+        return this.checkbox.clone();
     }
 }
 
 class MacFactory implements GUIFactory {
+
+    button = new MacButton();
+    checkbox = new MacCheckbox();
     createButton() {
         return new MacButton();
     }

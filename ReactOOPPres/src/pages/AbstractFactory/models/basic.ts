@@ -12,65 +12,65 @@ type ButtonComponent = Component<PropsButton2 & PropsButton1>
 type CheckboxComponent = Component<PropsCheckbox>
 
 interface Button {
-  render(): ButtonComponent
+    render(): ButtonComponent
 }
 
 interface Checkbox {
-  render(): CheckboxComponent
+    render(): CheckboxComponent
 }
 
 class Button1 implements Button {
-  render(){ return UiButton1 }
+    render(){ return UiButton1 }
 }
 
 class Button2 implements Button {
-  render(){ return UiButton2 }
+    render(){ return UiButton2 }
 }
 
 class Checkbox1 implements Checkbox {
-  render(){ return UiCheckbox1 }
+    render(){ return UiCheckbox1 }
 }
 
 class Checkbox2 implements Checkbox {
-  render(){ return UiCheckbox2 }
+    render(){ return UiCheckbox2 }
 }
 
 abstract class UiKitFactory {
-  abstract createButton(): Button
-  abstract createCheckbox(): Checkbox
+    abstract createButton(): Button
+    abstract createCheckbox(): Checkbox
 }
 
 
 class UiKit1Factory extends UiKitFactory{
-  createButton(){
-    return new Button1()
-  }
+    createButton(){
+        return new Button1()
+    }
 
-  createCheckbox(){
-    return new Checkbox1()
-  }
+    createCheckbox(){
+        return new Checkbox1()
+    }
 }
 
 
 class UiKit2Factory extends UiKitFactory{
-  createButton(){
-    return new Button2()
-  }
+    createButton(){
+        return new Button2()
+    }
 
-  createCheckbox(){
-    return new Checkbox2()
-  }
+    createCheckbox(){
+        return new Checkbox2()
+    }
 }
 
 export default function createUiKit(version: string): UiKitFactory {
-  switch (version) {
-    case '1':
-      return new UiKit1Factory()
-    case '2':
-      return new UiKit2Factory()
-    default:
-      throw new Error("Version is not supported")
-  }
+    switch (version) {
+        case '1':
+            return new UiKit1Factory()
+        case '2':
+            return new UiKit2Factory()
+        default:
+            throw new Error("Version is not supported")
+    }
 }
 
 

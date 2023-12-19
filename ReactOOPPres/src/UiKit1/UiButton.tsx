@@ -1,6 +1,5 @@
 export interface Props {
   onClick: () => void;
-  onChange: () => void
   width?: string;
 }
 
