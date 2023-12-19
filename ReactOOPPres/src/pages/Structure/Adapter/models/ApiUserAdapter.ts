@@ -2,7 +2,8 @@ import ApiUserV2 from './ApiUserV2.ts'
 import { ApiUser, User1 } from '../types.ts'
 
 export default class ApiUserAdapter implements ApiUser {
-  private apiUserV2: ApiUserV2 = new ApiUserV2()
+  constructor(private apiUserV2 = new ApiUserV2()) {}
+
   public async getUserData(): Promise<User1> {
     const [
       {
@@ -15,22 +16,25 @@ export default class ApiUserAdapter implements ApiUser {
       this.apiUserV2.getUserData(),
       this.apiUserV2.getUserInfo()
     ])
+
     const [firstName, lastName] = name.split(' ')
-    return {
-      id,
-      username,
-      password,
-      email,
-      firstName,
-      lastName,
-      birthdate,
-      address,
-      phoneNumber: phone,
-      socialProfile,
-      isVerified,
-      lastLogin,
-      isActive,
-      avatarUrl
-    }
+    return await new Promise(resolve => {
+      resolve({
+        id,
+        username,
+        password,
+        email,
+        firstName,
+        lastName,
+        birthdate,
+        address,
+        phoneNumber: phone,
+        socialProfile,
+        isVerified,
+        lastLogin,
+        isActive,
+        avatarUrl
+      })
+    })
   }
 }

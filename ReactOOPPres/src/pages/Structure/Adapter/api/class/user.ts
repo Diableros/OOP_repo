@@ -4,5 +4,8 @@ import ApiUserAdapter from '../../models/ApiUserAdapter.ts'
 
 const apiAdapter = new ApiUserAdapter()
 export const useUserData = () => {
-  return useQuery({ queryKey: ['user'], queryFn: apiAdapter.getUserData })
+  return useQuery({
+    queryKey: ['user-class'],
+    queryFn: () => apiAdapter.getUserData()
+  })
 }

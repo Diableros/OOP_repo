@@ -1,213 +1,208 @@
 type Person = {
     seat: (object: Sofa | Chair) => void,
-    sleepOn: (sofa: Sofa) => void
-}
+    sleepOn: (sofa: Sofa) => void,
+};
 
 interface Chair {
-    hasLegs: (person: Person) => boolean
-    seatsOn: (person: Person) => void
-    readonly seats: 1
+    hasLegs: (person: Person) => boolean;
+    seatsOn: (person: Person) => void;
+    readonly seats: 1;
 }
 
 interface Sofa {
-    hasLegs: () => boolean
-    seatsOn: (person: Person) => void
-    sleepOn: (person: Person) => void
-    readonly seats: 3
+    hasLegs: () => boolean;
+    seatsOn: (person: Person) => void;
+    sleepOn: (person: Person) => void;
+    readonly seats: 3;
 }
 
 interface CoffeeTable {
-    hasLegs: () => boolean
-    putOn: () => void
+    hasLegs: () => boolean;
+    putOn: () => void;
 }
 
-
 class ArtDecoChair implements Chair {
-    readonly seats = 1
+    readonly seats = 1;
 
-    softness: number
+    softness: number;
 
-    hasLegs(){
-        return true
+    hasLegs() {
+        return true;
     }
 
     seatsOn(person: Person) {
-        return person.seat(this)
+        return person.seat(this);
     }
 }
 class VictorianChair implements Chair {
 
-    readonly seats = 1
+    readonly seats = 1;
 
-    buttons: number
+    buttons: number;
 
-    hasLegs(){
-        return true
+    hasLegs() {
+        return true;
     }
 
     seatsOn(person: Person) {
-        return person.seat(this)
+        return person.seat(this);
     }
 }
 class ModernChair implements Chair {
-    readonly seats = 1
+    readonly seats = 1;
 
-    material: 'plastic' | 'wooden' | 'stone'
+    material: 'plastic' | 'wooden' | 'stone';
 
-    hasLegs(){
-        return true
+    hasLegs() {
+        return true;
     }
 
     seatsOn(person: Person) {
-        return person.seat(this)
+        return person.seat(this);
     }
 }
 
-
 class ArtDecoSofa implements Sofa {
-    readonly seats = 3
+    readonly seats = 3;
 
-    softness: number
+    softness: number;
 
-    hasLegs(){
-        return true
+    hasLegs() {
+        return true;
     }
 
     seatsOn(person: Person) {
-        return person.seat(this)
+        return person.seat(this);
     }
 
     sleepOn(person: Person) {
-        return person.sleepOn(this)
+        return person.sleepOn(this);
     }
 }
 class VictorianSofa implements Sofa {
 
-    readonly seats = 3
+    readonly seats = 3;
 
-    buttons: number
+    buttons: number;
 
-    hasLegs(){
-        return true
+    hasLegs() {
+        return true;
     }
 
     seatsOn(person: Person) {
-        return person.seat(this)
+        return person.seat(this);
     }
 
     sleepOn(person: Person) {
-        return person.sleepOn(this)
+        return person.sleepOn(this);
     }
 }
 
 class ModernSofa implements Sofa {
-    readonly seats = 3
+    readonly seats = 3;
 
-    material: 'plastic' | 'wooden' | 'stone'
+    material: 'plastic' | 'wooden' | 'stone';
 
-    hasLegs(){
-        return true
+    hasLegs() {
+        return true;
     }
     seatsOn(person: Person) {
-        return person.seat(this)
+        return person.seat(this);
     }
 
     sleepOn(person: Person) {
-        return person.sleepOn(this)
+        return person.sleepOn(this);
     }
 }
-
 
 class ArtDecoCoffeeTable implements CoffeeTable {
-    hasLegs(){
-        return true
+    hasLegs() {
+        return true;
     }
 
-    putOn(){
+    putOn() {
 
     }
 }
-
 
 class VictorianCoffeeTable implements CoffeeTable {
-    hasLegs(){
-        return true
+    hasLegs() {
+        return true;
     }
 
-    putOn(){
+    putOn() {
 
     }
 }
 
-
 class ModernCoffeeTable implements CoffeeTable {
-    hasLegs(){
-        return true
+    hasLegs() {
+        return true;
     }
 
-    putOn(){
+    putOn() {
 
     }
 }
 
 interface FurnitureFactory {
-    createChair: () => Chair
-    createSofa: () => Sofa
-    createCoffeeTable: () => CoffeeTable
+    createChair: () => Chair;
+    createSofa: () => Sofa;
+    createCoffeeTable: () => CoffeeTable;
 }
 
 class ArtDecoFurniture implements FurnitureFactory{
-    createChair(){
-        return new ArtDecoChair()
+    createChair() {
+        return new ArtDecoChair();
     }
 
     createSofa() {
-        return new ArtDecoSofa()
+        return new ArtDecoSofa();
     }
 
     createCoffeeTable() {
-        return new ArtDecoCoffeeTable()
+        return new ArtDecoCoffeeTable();
     }
 }
 
 class VictorianFurniture implements FurnitureFactory{
-    createChair(){
-        return new VictorianChair()
+    createChair() {
+        return new VictorianChair();
     }
 
     createSofa() {
-        return new VictorianSofa()
+        return new VictorianSofa();
     }
 
     createCoffeeTable() {
-        return new VictorianCoffeeTable()
+        return new VictorianCoffeeTable();
     }
 }
 
 class ModernFurniture implements FurnitureFactory{
-    createChair(){
-        return new ModernChair()
+    createChair() {
+        return new ModernChair();
     }
 
     createSofa() {
-        return new ModernSofa()
+        return new ModernSofa();
     }
 
     createCoffeeTable() {
-        return new ModernCoffeeTable()
+        return new ModernCoffeeTable();
     }
 }
 
 class Application {
     style: 'ArtDeco' | 'Modern' | 'Victorian';
 
-    chair: Chair
+    chair: Chair;
 
-    sofa: Sofa
+    sofa: Sofa;
 
-    coffeeTable: CoffeeTable
+    coffeeTable: CoffeeTable;
 
-    furnitureFactory: FurnitureFactory
+    furnitureFactory: FurnitureFactory;
 
     constructor(style: 'ArtDeco' | 'Modern' | 'Victorian') {
         this.style = style;
@@ -225,10 +220,10 @@ class Application {
             this.furnitureFactory = new VictorianFurniture();
         }
 
-        this.chair = this.furnitureFactory.createChair()
-        this.sofa = this.furnitureFactory.createSofa()
-        this.coffeeTable = this.furnitureFactory.createCoffeeTable()
+        this.chair = this.furnitureFactory.createChair();
+        this.sofa = this.furnitureFactory.createSofa();
+        this.coffeeTable = this.furnitureFactory.createCoffeeTable();
     }
 }
 
-new Application('ArtDeco')
+new Application('ArtDeco');
