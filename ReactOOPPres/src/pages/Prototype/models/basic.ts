@@ -5,9 +5,7 @@ export interface Cloneable<T> {
 export abstract class ComponentPrototype
   implements Cloneable<ComponentPrototype>
 {
-  clone(): ComponentPrototype {
-    return { ...this }
-  }
+  abstract clone(): ComponentPrototype
 }
 
 export class Airport {

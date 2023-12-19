@@ -1,16 +1,17 @@
-interface Button {
+
+export interface Cloneable<T> {
+    clone(): T;
+}
+
+interface Button extends Cloneable<Button>{
     render: () => void;
 }
 
-interface Checkbox {
+interface Checkbox extends Cloneable<Checkbox>{
     render: () => void;
 }
 
-interface Prototype {
-    clone(): Prototype;
-}
-
-class WinButton implements Button, Prototype {
+class WinButton implements Button {
     clone() {
         return new WinButton();
     }
@@ -18,7 +19,7 @@ class WinButton implements Button, Prototype {
         console.log('win button is rendered');
     }
 }
-class MacButton implements Button, Prototype {
+class MacButton implements Button {
     clone() {
         return new MacButton();
     }
@@ -27,7 +28,7 @@ class MacButton implements Button, Prototype {
     }
 }
 
-class WinCheckbox implements Checkbox, Prototype {
+class WinCheckbox implements Checkbox {
     clone() {
         return new WinCheckbox();
     }
@@ -35,7 +36,7 @@ class WinCheckbox implements Checkbox, Prototype {
         console.log('win checkbox is rendered');
     }
 }
-class MacCheckbox implements Checkbox, Prototype {
+class MacCheckbox implements Checkbox {
     clone() {
         return new MacCheckbox();
     }
@@ -44,14 +45,9 @@ class MacCheckbox implements Checkbox, Prototype {
     }
 }
 
-interface GUIFactory {
-    createButton: () => Button;
-    createCheckbox: () => Checkbox;
-}
-
-class WinFactory implements GUIFactory {
-    button = new WinButton();
-    checkbox = new WinCheckbox();
+abstract class GUIFactory {
+    protected abstract button: Button;
+    protected abstract checkbox: Checkbox;
     createButton() {
         return this.button.clone();
     }
@@ -61,17 +57,14 @@ class WinFactory implements GUIFactory {
     }
 }
 
-class MacFactory implements GUIFactory {
+class WinFactory extends GUIFactory {
+    protected button: Button = new WinButton();
+    protected checkbox: Checkbox = new WinCheckbox();
+}
 
-    button = new MacButton();
-    checkbox = new MacCheckbox();
-    createButton() {
-        return new MacButton();
-    }
-
-    createCheckbox() {
-        return new MacCheckbox();
-    }
+class MacFactory extends GUIFactory {
+    protected button: Button = new MacButton();
+    protected checkbox: Checkbox = new MacCheckbox();
 }
 
 class Application {

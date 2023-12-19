@@ -4,6 +4,7 @@ import { Path } from '@/enum/path'
 import AbstractFactory from '@/pages/AbstractFactory'
 import { Prototype, PrototypeRegistry } from '@/pages/Prototype'
 import { Singleton } from '@/pages/Singleton'
+import { Builder } from '@/pages/Builder'
 export const routes = (): RouteObject[] => {
   return [
     {
@@ -25,6 +26,10 @@ export const routes = (): RouteObject[] => {
     {
       element: <Singleton />,
       path: Path.Singleton
+    },
+    {
+      element: <Builder />,
+      path: Path.Builder
     },
     {
       element: <h1>Not found</h1>,

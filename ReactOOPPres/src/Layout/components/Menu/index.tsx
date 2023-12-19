@@ -3,7 +3,9 @@ import {
   BankOutlined,
   TeamOutlined,
   ToolOutlined,
-  UsergroupAddOutlined
+  UserOutlined,
+  UsergroupAddOutlined,
+  BuildOutlined
 } from '@ant-design/icons'
 import { Menu as AntDMenu } from 'antd'
 import { matchRoutes, useLocation, useNavigate } from 'react-router-dom'
@@ -47,8 +49,13 @@ const Menu = () => {
         },
         {
           key: Path.Singleton,
-          icon: <UsergroupAddOutlined />,
+          icon: <UserOutlined />,
           label: 'Одиночка'
+        },
+        {
+          key: Path.Builder,
+          icon: <BuildOutlined />,
+          label: 'Строитель'
         }
       ]}
     />

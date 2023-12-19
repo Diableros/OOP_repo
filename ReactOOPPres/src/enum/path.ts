@@ -3,5 +3,6 @@ export const enum Path {
   AbstractFactory = 'abstract-factory',
   Prototype = 'prototype',
   PrototypeRegistry = 'prototype-registry',
-  Singleton = 'singleton'
+  Singleton = 'singleton',
+  Builder = 'builder'
 }
