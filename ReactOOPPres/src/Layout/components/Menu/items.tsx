@@ -5,6 +5,7 @@ import {
   BankOutlined,
   BuildOutlined,
   ColumnWidthOutlined,
+  HeatMapOutlined,
   SwapOutlined,
   TeamOutlined,
   ToolOutlined,
@@ -88,6 +89,11 @@ export const MENU_ITEMS: MenuItem[] = [
         key: Path.CompositeClassic,
         icon: <ApartmentOutlined />,
         label: 'Компоновщик Classic'
+      },
+      {
+        key: Path.Decorator,
+        icon: <HeatMapOutlined />,
+        label: 'Декоратор'
       }
     ]
   }

@@ -8,6 +8,7 @@ import { Builder } from '@/pages/Creational/Builder'
 import { AdapterFC, AdapterClassic } from '@/pages/Structure/Adapter'
 import { BridgeClassic, BridgeFC } from '@/pages/Structure/Bridge'
 import { CompositeFC, CompositeClassic } from '@/pages/Structure/Composite'
+import { Decorator } from '@/pages/Structure/Decorator'
 export const routes = (): RouteObject[] => {
   return [
     {
@@ -65,6 +66,10 @@ export const routes = (): RouteObject[] => {
         {
           element: <CompositeClassic />,
           path: Path.CompositeClassic
+        },
+        {
+          element: <Decorator />,
+          path: Path.Decorator
         }
       ]
     },
