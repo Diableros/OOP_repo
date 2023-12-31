@@ -13,7 +13,8 @@ import {
   UserOutlined,
   VerticalAlignBottomOutlined,
   HomeOutlined,
-  DingtalkOutlined
+  DingtalkOutlined,
+  LockOutlined
 } from '@ant-design/icons'
 import { MenuProps } from 'antd'
 
@@ -106,6 +107,11 @@ export const MENU_ITEMS: MenuItem[] = [
         key: Path.Flyweight,
         icon: <DingtalkOutlined />,
         label: 'Легковес'
+      },
+      {
+        key: Path.Proxy,
+        icon: <LockOutlined />,
+        label: 'Заместитель'
       }
     ]
   }

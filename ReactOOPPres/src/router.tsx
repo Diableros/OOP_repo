@@ -34,6 +34,7 @@ const CompositeClassic = React.lazy(
 const Decorator = React.lazy(() => import('@/pages/Structure/Decorator'))
 const Facade = React.lazy(() => import('@/pages/Structure/Facade'))
 const Flyweight = React.lazy(() => import('@/pages/Structure/Flyweight'))
+const Proxy = React.lazy(() => import('@/pages/Structure/Proxy'))
 
 export const routes = (): RouteObject[] => {
   return [
@@ -104,6 +105,10 @@ export const routes = (): RouteObject[] => {
         {
           element: <Flyweight />,
           path: Path.Flyweight
+        },
+        {
+          element: <Proxy />,
+          path: Path.Proxy
         }
       ]
     },
