@@ -6,7 +6,6 @@ const Main = React.lazy(() => import('@/pages/Creational/FactoryMethod'))
 const AbstractFactory = React.lazy(
   () => import('@/pages/Creational/AbstractFactory')
 )
-
 const Prototype = React.lazy(
   () => import('@/pages/Creational/Prototype/Prototype')
 )
@@ -15,6 +14,7 @@ const PrototypeRegistry = React.lazy(
 )
 const Singleton = React.lazy(() => import('@/pages/Creational/Singleton'))
 const Builder = React.lazy(() => import('@/pages/Creational/Builder'))
+
 const AdapterFC = React.lazy(
   () => import('@/pages/Structure/Adapter/AdapterFC')
 )
@@ -35,6 +35,10 @@ const Decorator = React.lazy(() => import('@/pages/Structure/Decorator'))
 const Facade = React.lazy(() => import('@/pages/Structure/Facade'))
 const Flyweight = React.lazy(() => import('@/pages/Structure/Flyweight'))
 const Proxy = React.lazy(() => import('@/pages/Structure/Proxy'))
+
+const ChainsOfResponsibility = React.lazy(
+  () => import('@/pages/Behavioral/ChainsOfResponsibility')
+)
 
 export const routes = (): RouteObject[] => {
   return [
@@ -109,6 +113,15 @@ export const routes = (): RouteObject[] => {
         {
           element: <Proxy />,
           path: Path.Proxy
+        }
+      ]
+    },
+    {
+      children: [
+        {
+          index: true,
+          element: <ChainsOfResponsibility />,
+          path: Path.ChainsOfResponsibility
         }
       ]
     },

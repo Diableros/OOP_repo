@@ -14,7 +14,8 @@ import {
   VerticalAlignBottomOutlined,
   HomeOutlined,
   DingtalkOutlined,
-  LockOutlined
+  LockOutlined,
+  HourglassOutlined
 } from '@ant-design/icons'
 import { MenuProps } from 'antd'
 
@@ -60,7 +61,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     key: Path.Structure,
-    icon: <SwapOutlined />,
+    icon: <ApartmentOutlined />,
     label: 'Структурные',
     children: [
       {
@@ -112,6 +113,22 @@ export const MENU_ITEMS: MenuItem[] = [
         key: Path.Proxy,
         icon: <LockOutlined />,
         label: 'Заместитель'
+      }
+    ]
+  },
+  {
+    key: Path.Behavior,
+    icon: <SwapOutlined />,
+    label: 'Поведенческие',
+    children: [
+      {
+        key: Path.ChainsOfResponsibility,
+        icon: (
+          <div style={{ transform: 'rotate(90deg)' }}>
+            <HourglassOutlined />
+          </div>
+        ),
+        label: 'Цепочка обязанностей'
       }
     ]
   }

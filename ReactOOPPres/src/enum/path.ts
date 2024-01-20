@@ -17,5 +17,8 @@ export const enum Path {
   Decorator = 'structure/decorator',
   Facade = 'structure/facade',
   Flyweight = 'structure/flyweight',
-  Proxy = 'structure/proxy'
+  Proxy = 'structure/proxy',
+
+  Behavior = 'behavior',
+  ChainsOfResponsibility = 'behavior/chains-of-responsibility'
 }
