@@ -15,7 +15,8 @@ import {
   HomeOutlined,
   DingtalkOutlined,
   LockOutlined,
-  HourglassOutlined
+  HourglassOutlined,
+  MailOutlined
 } from '@ant-design/icons'
 import { MenuProps } from 'antd'
 
@@ -129,6 +130,11 @@ export const MENU_ITEMS: MenuItem[] = [
           </div>
         ),
         label: 'Цепочка обязанностей'
+      },
+      {
+        key: Path.Command,
+        icon: <MailOutlined />,
+        label: 'Команда'
       }
     ]
   }

@@ -39,6 +39,7 @@ const Proxy = React.lazy(() => import('@/pages/Structure/Proxy'))
 const ChainsOfResponsibility = React.lazy(
   () => import('@/pages/Behavioral/ChainsOfResponsibility')
 )
+const Command = React.lazy(() => import('@/pages/Behavioral/Command'))
 
 export const routes = (): RouteObject[] => {
   return [
@@ -122,6 +123,10 @@ export const routes = (): RouteObject[] => {
           index: true,
           element: <ChainsOfResponsibility />,
           path: Path.ChainsOfResponsibility
+        },
+        {
+          element: <Command />,
+          path: Path.Command
         }
       ]
     },

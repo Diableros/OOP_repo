@@ -20,5 +20,6 @@ export const enum Path {
   Proxy = 'structure/proxy',
 
   Behavior = 'behavior',
-  ChainsOfResponsibility = 'behavior/chains-of-responsibility'
+  ChainsOfResponsibility = 'behavior/chains-of-responsibility',
+  Command = 'behavior/command'
 }
